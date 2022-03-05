@@ -41,7 +41,6 @@ public class MovieList {
             String rate = e.select("td.ratingColumn.imdbRating").text().trim();
             // System.out.println(rate);
 
-
             movieList.add(new Movie(img, title, yearReleased, rateBasedOn, rate));
          }
         }

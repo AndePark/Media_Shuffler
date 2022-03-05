@@ -2,6 +2,7 @@ package model;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 import java.io.IOException;
@@ -18,9 +19,16 @@ public class SongList {
     }
 
     public void addSongsList() throws IOException {
-        final String url = "https://en.wikipedia.org/wiki/List_of_most-streamed_songs_on_Spotify";
+        final String url = "https://hiphopgoldenage.com/list/the-best-250-hip-hop-albums-of-all-time/";
         Document doc = Jsoup.connect(url).timeout(6000).get();
-        Elements table = doc.select("table.wikitable.sortable.jquery-tablesorter");
+        Elements head = doc.select("div.text-wrapper");
+
+        for (Element e : head.select("div")) {
+            String title  = e.select("h3");
+            System.out.println(title);
+        }
+
+
 
     }
 
