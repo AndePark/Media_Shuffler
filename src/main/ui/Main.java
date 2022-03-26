@@ -1,33 +1,50 @@
 package ui;
 
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
-import org.jsoup.select.Elements;
-
-import java.io.IOException;
+//import model.Movie;
+//import model.MovieList;
 
 public class Main {
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
+        new ChooserAppGUI();
+
+
 //        MovieList movieList = new MovieList();
 //        movieList.addMoviesList();
-
-
-//        public addSongsList() throws IOException {
-            final String url = "https://en.wikipedia.org/wiki/List_of_most-streamed_songs_on_Spotify";
-            Document doc = Jsoup.connect(url).timeout(6000).get();
-//          Elements table = doc.select("table.wikitable.sortable.jquery-tablesorter tr");
-          Elements body = doc.select("table.wikitable.sortable.jquery-tablesorter  tr");
-
-        System.out.println(body.select("tr").size());
-
-//            for (Element row : doc.select("table.wikitable.sortable.jquery-tablesorter:nth-of-type(1) tr")) {
-//                String title = row.select("td:nth-of-type(1)").at();
-//                System.out.println(title);
+//        try {
+//            MovieList ml = new MovieList();
+//            ml.addMoviesList();
+//            for (Movie m : ml.getMovieList()) {
+//                System.out.println(m.display(m));
 //            }
+//        } catch(IOException e) {
+//
+//            System.out.println("unable to find");
+//        }
 
-        }
+//        try {
+//            ShowList shl = new ShowList();
+//            shl.addShowsList();
+//            for (Show sh : shl.getShowList()) {
+//                System.out.println(sh.display(sh));
+//            }
+//        } catch (IOException e) {
+//            System.out.println("unable");
+//        }
+
+//        try {
+//            SongList sl = new SongList();
+//            sl.addSongsList();
+//            for (Song s : sl.getSongList()) {
+//                System.out.println(s.display(s));
+//            }
+//        }catch(IOException e) {
+//            System.out.println("unable");
+//        }
 
 
     }
+}
+
+
 

@@ -1,18 +1,18 @@
 package model;
 
-public class Movie {
+public class Show {
 
     private String title;
     private String yearReleased;
     private String rateBasedOn;
 
+    public Show(String title, String yearReleased, String rateBasedOn) {
 
-    public Movie(String title, String yearReleased, String rateBasedOn) {
         this.title = title;
         this.yearReleased = yearReleased;
         this.rateBasedOn = rateBasedOn;
-
     }
+
 
     public String getTitle() {
         return title;
@@ -38,9 +38,8 @@ public class Movie {
         this.rateBasedOn = rateBasedOn;
     }
 
-
-    public String display(Movie m) {
-        String movieInfo = title +  yearReleased +  rateBasedOn;
-        return movieInfo;
+    public String display(Show sh) {
+        String showInfo = title + yearReleased + rateBasedOn;
+        return showInfo;
     }
 }

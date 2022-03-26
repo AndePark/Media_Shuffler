@@ -9,24 +9,21 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MovieList {
+public class ShowList {
 
-    private List<Movie> movieList;
+    private List<Show> showList;
 
-    public MovieList() {
-        movieList = new ArrayList<>();
+    public ShowList() {
+        showList = new ArrayList<>();
     }
 
-    public void addMoviesList() throws IOException {
-        final String url = "https://www.imdb.com/chart/top/";
+    public void addShowsList() throws IOException {
+        final String url = "https://www.imdb.com/chart/toptv/";
         Document doc = Jsoup.connect(url).timeout(6000).get();
         Elements body = doc.select("tbody.lister-list");
 
-        //System.out.println(body.select("tr").size());
-
         for (Element e : body.select("tr")) {
 //            String img = e.select("td.posterColumn img").attr("src"); --> image url
-//            System.out.println(img);
 
             String title = e.select("td.posterColumn img").attr("alt");
 //            System.out.println(title);
@@ -35,32 +32,18 @@ public class MovieList {
                     .text().replaceAll("[^\\d]", "");
 //             System.out.println(yearReleased);
 
-            String rateBasedOn = e.select("td.ratingColumn strong").attr("title");
+            String rateBasedOn = e.select("td.ratingColumn.imdbRating strong").attr("title");
 //             System.out.println(rateBasedOn);
 
-
-
-
-            movieList.add(new Movie(title, yearReleased, rateBasedOn));
-         }
+            showList.add(new Show(title, yearReleased, rateBasedOn));
         }
-
-
-
-
-    public Movie get(int index) {
-        return movieList.get(index);
     }
 
-    public List<Movie> getMovieList() {
-        return movieList;
+    public List<Show> getShowList() {
+        return showList;
     }
 
-    public void setMovieList(List<Movie> movieList) {
-        this.movieList = movieList;
-    }
-
-    public int size() {
-        return movieList.size();
+    public void setShowList(List<Show> showList) {
+        this.showList = showList;
     }
 }
