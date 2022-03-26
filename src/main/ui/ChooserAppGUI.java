@@ -1,6 +1,8 @@
 package ui;
 
 
+import model.MovieList;
+import model.ShowList;
 import model.Song;
 import model.SongList;
 
@@ -20,9 +22,9 @@ public class ChooserAppGUI {
     private JPanel introPanel;
     private Timer introTimer;
 
-//    private MovieList movieList;
+    private MovieList movieList;
     private SongList songList;
-//    private ShowList showList;
+    private ShowList showList;
     private Random random = new Random();
 
 
@@ -57,9 +59,9 @@ public class ChooserAppGUI {
 
      private void runGUI() {
         frame = new JFrame();
-//        movieList = new MovieList();
+        movieList = new MovieList();
         songList = new SongList();
-//        showList = new ShowList();
+        showList = new ShowList();
         initButtonSong();
         initMainFrame();
      }
