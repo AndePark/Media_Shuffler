@@ -47,7 +47,7 @@ public class Song {
     }
 
     public String display(Song s) {
-        String songInfo = rank + title + artist + year;
+        String songInfo = "\nRanking: " + this.rank + "\nTitle: " + this.title + "\nArtist: " + this.artist + "\nYear: " + this.year;
         return songInfo;
     }
 }

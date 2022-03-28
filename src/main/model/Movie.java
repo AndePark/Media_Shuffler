@@ -40,7 +40,8 @@ public class Movie {
 
 
     public String display(Movie m) {
-        String movieInfo = title +  yearReleased +  rateBasedOn;
+        String movieInfo = "\nTitle: " + this.title + "\nYear: " + this.yearReleased + "\nRating: " + this.rateBasedOn;
         return movieInfo;
     }
 }
+

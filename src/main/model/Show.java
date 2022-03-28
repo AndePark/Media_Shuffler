@@ -39,7 +39,9 @@ public class Show {
     }
 
     public String display(Show sh) {
-        String showInfo = title + yearReleased + rateBasedOn;
+        String showInfo = "\nTitle: " + this.title + "\nYear: " + this.yearReleased + "\nRating: " + this.rateBasedOn;
         return showInfo;
     }
 }
+
+

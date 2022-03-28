@@ -1,10 +1,7 @@
 package ui;
 
 
-import model.MovieList;
-import model.ShowList;
-import model.Song;
-import model.SongList;
+import model.*;
 
 import javax.swing.*;
 import java.awt.*;
@@ -63,6 +60,8 @@ public class ChooserAppGUI {
         songList = new SongList();
         showList = new ShowList();
         initButtonSong();
+        initButtonShow();
+        initButtonMovie();
         initMainFrame();
      }
 
@@ -91,7 +90,7 @@ public class ChooserAppGUI {
                     songList.addSongsList();
                     int index = random.nextInt(songList.getSongList().size());
                     Song s = songList.getSongList().get(index);
-                    s.display(s);
+                    //s.display(s);
 
                     JOptionPane.showMessageDialog(frame, s.display(s), "Song", JOptionPane.PLAIN_MESSAGE);
                 } catch (IOException ioException) {
@@ -99,6 +98,53 @@ public class ChooserAppGUI {
                 }
             }
         });
+     }
+
+
+     private void initButtonShow() {
+         JButton buttonShow = new JButton("SHOW");
+         buttonShow.setBounds(150, 50, 50, 50);
+         buttonShow.setBackground(Color.white);
+
+         frame.add(buttonShow);
+
+         buttonShow.addActionListener(new ActionListener() {
+             @Override
+             public void actionPerformed(ActionEvent e) {
+                 try {
+                     showList.addShowsList();
+                     int index = random.nextInt(showList.getShowList().size());
+                     Show sh = showList.getShowList().get(index);
+
+                     JOptionPane.showMessageDialog(frame, sh.display(sh), "Show", JOptionPane.PLAIN_MESSAGE);
+                 } catch (IOException ioException) {
+                     ioException.printStackTrace();
+                 }
+             }
+         });
+     }
+
+     private void initButtonMovie() {
+         JButton buttonMovie = new JButton("SHOW");
+         buttonMovie.setBounds(250, 50, 50, 50);
+         buttonMovie.setBackground(Color.white);
+
+         frame.add(buttonMovie);
+
+         buttonMovie.addActionListener(new ActionListener() {
+             @Override
+             public void actionPerformed(ActionEvent e) {
+                 try {
+                     movieList.addMoviesList();
+                     int index = random.nextInt(movieList.getMovieList().size());
+                     Movie m = movieList.getMovieList().get(index);
+
+                     JOptionPane.showMessageDialog(frame, m.display(m), "Movie", JOptionPane.PLAIN_MESSAGE);
+                 } catch (IOException ioException) {
+                     ioException.printStackTrace();
+                 }
+             }
+         });
      }
 
 }
