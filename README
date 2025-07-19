@@ -1,7 +1,7 @@
 A media shuffler app 
-scrape top 250 movies from IMDB 
-scrape top tv shows 
-scrape top stand up 
-scrape top hip hop songs 
+scrap top 250 movies from IMDB 
+scrap top tv shows 
+scrap top stand up 
+scrap top hip hop songs 
 
-app allows user to choose a category from above list, then randomly generates a title and associated information 
+Web app allows user to choose a category from above list, then randomly generates a title and associated information 
